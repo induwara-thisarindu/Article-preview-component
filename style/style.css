@@ -1,0 +1,268 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+}
+
+:root {
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+body {
+    background: var(--Light-Grayish-Blue);
+}
+
+.card {
+    display: flex;
+    width: 910px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    border-radius: 20px;
+}
+
+.card .image {
+    background-image: url(../images/drawers.jpg);
+    width: 985px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.card .card-info {
+    padding: 40px;
+    margin-right: 10px;
+}
+
+.card .card-info h2 {
+    font-weight: 700;
+    color: var(--Very-Dark-Grayish-Blue);
+    margin-bottom: 25px;
+    width: 410px;
+}
+
+.card .card-info p {
+    color: var(--Desaturated-Dark-Blue);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.card .profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .profile .profile-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.share {
+    position: relative;
+}
+
+.share .links {
+    display: none;
+    position: absolute;
+    justify-content: space-evenly;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    width: 300px;
+    padding: 10px;
+    align-items: center;
+    bottom: 115%;
+    right: -225%;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.share .links.show {
+    display: flex;
+}
+
+.share .links::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: 5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.share .links p{
+    padding-top: 10px;
+    letter-spacing: 0.5rem;
+    color: white;
+}
+
+.share .links ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+
+.share .links ul li {
+    margin-left: 20px;
+    list-style-type: none;
+}
+
+.share #share-btn {
+    background-color: var(--Light-Grayish-Blue);
+    border: none;
+    padding: 15px 17.5px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+.share #share-btn:hover {
+    background-color: var(--Very-Dark-Grayish-Blue);
+    cursor: pointer;
+}
+
+
+.card .profile .profile-info .avatar img {
+    border-radius: 50%;
+    width: 60px;
+}
+.card .profile .profile-info .info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 0.5rem;
+}
+
+.card .profile .profile-info .info h4 {
+    font-weight: 700;
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+.card .profile .profile-info .info p{
+    color: var(--Grayish-Blue);
+}
+
+@media (max-width: 1040px) {
+    .card {
+        flex-direction: column;
+        width: 500px;
+    }
+
+    .card .image {
+        background-image: url(../images/drawers.jpg);
+        height: 335px;
+        width: 500px;
+        background-size: cover;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .card .card-info h2 {
+        width: 420px;
+    }
+
+    .card .profile {
+        margin-bottom: -20px;
+    }
+
+    .share .links {
+        position: absolute;
+        justify-content: space-evenly;
+        background-color: var(--Very-Dark-Grayish-Blue);
+        width: 500px;
+        padding: 10px;
+        align-items: center;
+        bottom: -75%;
+        height: 100px;
+        left: -800%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        z-index: 1;
+    }
+
+    #share-btn{
+        position: relative;
+        z-index: 2;
+    }
+
+    .share .links::after {
+        display: none;
+      }
+
+    .share .links ul{
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 510px) {
+    .card {
+        flex-direction: column;
+        width: 350px;
+    }
+
+    .card .image {
+        background-image: url(../images/drawers.jpg);
+        height: 335px;
+        width: 350px;
+        background-size: cover;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .card .card-info h2 {
+        width: 250px;
+    }
+
+    .card .profile {
+        margin-bottom: -20px;
+    }
+
+    .share .links {
+        position: absolute;
+        justify-content: space-evenly;
+        background-color: var(--Very-Dark-Grayish-Blue);
+        width: 350px;
+        padding: 10px;
+        align-items: center;
+        bottom: -105%;
+        height: 120px;
+        left: -500%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        z-index: 1;
+    }
+
+    .share .links ul{
+        margin-right: 100px;
+    }
+}
